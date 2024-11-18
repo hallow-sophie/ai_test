@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
 
 data = pd.read_csv("박물관미술관정보_결측치제거.csv", encoding='euc-kr',encoding_errors='ignore')
