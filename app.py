@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 import time
 
-st.title("통합데이터 서비스")
-st.image('image.jpg')
+st.title("Pocketmonster 서식지 분석")
+st.image('pocketmonster_bg.jpg')
 data = pd.read_csv("members.csv")
 data["PW"] = data["PW"].astype(str)
 
 with st.form("login_form"):
-    ID = st.text_input("ID", placeholder="아이디를 입력하세요")
-    PW = st.text_input("Password", type="password", placeholder="비밀번호를 입력하세요")
+    ID = st.text_input("ID", placeholder="아이디를 입력하세요 (손님 ID : 이상해씨)")
+    PW = st.text_input("Password", type="password", placeholder="비밀번호를 입력하세요 (손님 PW : 1)")
     submit_button = st.form_submit_button("로그인")
 
 if submit_button:
@@ -30,7 +30,7 @@ if submit_button:
                 my_bar.progress(percent_complete + 1, text=progress_text)
             time.sleep(1)
             my_bar.empty()
-            st.switch_page("pages/map.py")
+            st.switch_page("pages/pocketmon_map.py")
             
             
         else:
